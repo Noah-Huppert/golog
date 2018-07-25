@@ -80,4 +80,16 @@ func Example_format() {
 
 	logger.Fatal("hello fatal")
 	logger.Fatalf("hello %s", "fatal")
+
+	// Output:
+	// name=basic-example level=DEBUG msg=hello debug
+	// name=basic-example level=DEBUG msg=hello debug
+	// name=basic-example level=INFO msg=hello info
+	// name=basic-example level=INFO msg=hello info
+	// name=basic-example level=WARN msg=hello warn
+	// name=basic-example level=WARN msg=hello warn
+	// name=basic-example level=ERROR msg=hello error
+	// name=basic-example level=ERROR msg=hello error
+	// name=basic-example level=FATAL msg=hello fatal
+	// name=basic-example level=FATAL msg=hello fatal
 }
