@@ -38,4 +38,8 @@
 //
 //   logger.SetLevel(golog.FatalLevel)
 //
+// Log output format can be configured with Go templates
+//
+//  logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}")
+//
 package golog
