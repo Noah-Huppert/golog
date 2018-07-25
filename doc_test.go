@@ -41,7 +41,7 @@ func Example_basic() {
 // Shows how to only display messages from certain log levels
 func Example_levels() {
 	// Configure logger to only display error messages or greater
-	logger := golog.NewStdLogger("basic-example")
+	logger := golog.NewStdLogger("levels-example")
 	logger.SetLevel(golog.ErrorLevel)
 
 	// Log messages which will not be shown because they are below the
@@ -53,6 +53,10 @@ func Example_levels() {
 	// Log message that will show
 	logger.Error("Error log messages will show")
 	logger.Fatal("I am a fatal message so I will be displayed")
+
+	// Output:
+	// levels-example [ERROR] Error log messages will show
+	// levels-example [FATAL] I am a fatal message so I will be displayed
 }
 
 // Shows how to customize the log output format
