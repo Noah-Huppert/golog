@@ -1,0 +1,64 @@
+package golog
+
+// Example_basic shows how to use Go Log with no customization.
+func Example_basic() {
+	// logger will print normal messages to stdout and errors to stderr
+	logger := golog.NewStdLogger("basic-example")
+
+	// Log messages for each log level
+	logger.Debug("hello debug")
+	logger.Debugf("hello %s", "debug")
+
+	logger.Info("hello info")
+	logger.Infof("hello %s", "info")
+
+	logger.Warn("hello warn")
+	logger.Warnf("hello %s", "warn")
+
+	logger.Error("hello error")
+	logger.Errorf("hello %s", "error")
+
+	logger.Fatal("hello fatal")
+	logger.Fatalf("hello %s", "fatal")
+}
+
+// Example_set_logging_level shows how to only display messages from certain
+// log levels
+func Example_set_logging_level() {
+	// Configure logger to only display error messages or greater
+	logger := golog.NewStdLogger("basic-example")
+	logger.SetLevel(golog.ErrorLevel)
+
+	// Log messages which will not be shown because they are below the
+	// specified log level
+	logger.Debug("I will not be shown b/c I am a debug message")
+	logger.Info("I am just an info message show I will not be shown")
+	logger.Warn("Due to the fact that I am a warn message I will not be displayed")
+
+	// Log message that will show
+	logger.Error("Error log messages will show")
+	logger.Fatal("I am a fatal message so I will be displayed")
+}
+
+// Example_output_format shows how to customize the log output format
+func Example_output_format() {
+	// Configure logger with special format
+	logger := golog.NewStdLogger("basic-example")
+	logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}")
+
+	// Log messages for each log level
+	logger.Debug("hello debug")
+	logger.Debugf("hello %s", "debug")
+
+	logger.Info("hello info")
+	logger.Infof("hello %s", "info")
+
+	logger.Warn("hello warn")
+	logger.Warnf("hello %s", "warn")
+
+	logger.Error("hello error")
+	logger.Errorf("hello %s", "error")
+
+	logger.Fatal("hello fatal")
+	logger.Fatalf("hello %s", "fatal")
+}
