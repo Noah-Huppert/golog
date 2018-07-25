@@ -25,4 +25,17 @@
 //
 //   logger.Fatal("hello fatal")
 //   logger.Fatalf("hello %s", "fatal")
+//
+// You can configure Go Log to only show messages of certain importance
+//
+//   logger.SetLevel(golog.DebugLevel)
+//
+//   logger.SetLevel(golog.InfoLevel)
+//
+//   logger.SetLevel(golog.WarnLevel)
+//
+//   logger.SetLevel(golog.ErrorLevel)
+//
+//   logger.SetLevel(golog.FatalLevel)
+//
 package golog
