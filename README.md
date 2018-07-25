@@ -7,8 +7,7 @@ A simple Go logging package.
 - [Advanced Usage](#advanced-usage)
 
 # Overview
-Go Log is a simple logging library augments patterns from the `log` 
-package and adds useful features.
+Go Log is a simple logging library inspired by the standard `log` package.
 
 It was created because there was a lack of simple easy to use logging libraries 
 in the Go ecosystem.  
