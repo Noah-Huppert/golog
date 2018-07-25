@@ -1,4 +1,4 @@
-# Go Log
+# Go Log [![Go Doc](https://godoc.org/github.com/Noah-Huppert/golog?status.svg)](http://godoc.org/github.com/Noah-Huppert/golog)
 A simple Go logging package.
 
 # Table Of Contents
