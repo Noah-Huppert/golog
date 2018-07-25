@@ -5,28 +5,24 @@
 //
 // Go Log is easy to setup:
 //
-// ```
-// // logger will print normal messages to stdout and errors to stderr
-// logger := golog.NewStdLogger("example")
-// ```
+//   // logger will print normal messages to stdout and errors to stderr
+//   logger := golog.NewStdLogger("example")
 //
 // The logging API should be familiar to those who have used the standard
 // `fmt` and `log` packages.
 //
-// ```
-// logger.Debug("hello debug")
-// logger.Debugf("hello %s", "debug")
+//   logger.Debug("hello debug")
+//   logger.Debugf("hello %s", "debug")
 //
-// logger.Info("hello info")
-// logger.Infof("hello %s", "info")
+//   logger.Info("hello info")
+//   logger.Infof("hello %s", "info")
 //
-// logger.Warn("hello warn")
-// logger.Warnf("hello %s", "warn")
+//   logger.Warn("hello warn")
+//   logger.Warnf("hello %s", "warn")
 //
-// logger.Error("hello error")
-// logger.Errorf("hello %s", "error")
+//   logger.Error("hello error")
+//   logger.Errorf("hello %s", "error")
 //
-// logger.Fatal("hello fatal")
-// logger.Fatalf("hello %s", "fatal")
-// ```
+//   logger.Fatal("hello fatal")
+//   logger.Fatalf("hello %s", "fatal")
 package golog
