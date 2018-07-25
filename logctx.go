@@ -13,7 +13,7 @@ type LogMsgCtx struct {
 }
 
 // NewLogMsgCtx creates a new LogMsgCtx
-func NewLogMsgCtx(name, lvl string, msg string) LogMsgCtx {
+func NewLogMsgCtx(name, lvl, msg string) LogMsgCtx {
 	return LogMsgCtx{
 		Name:  name,
 		Level: lvl,
