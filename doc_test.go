@@ -1,4 +1,8 @@
-package golog
+package golog_test
+
+import (
+	"github.com/Noah-Huppert/golog"
+)
 
 // Shows how to use Go Log with no customization.
 func Example_basic() {
@@ -20,6 +24,18 @@ func Example_basic() {
 
 	logger.Fatal("hello fatal")
 	logger.Fatalf("hello %s", "fatal")
+
+	// Output:
+	// basic-example [DEBUG] hello debug
+	// basic-example [DEBUG] hello debug
+	// basic-example [INFO] hello info
+	// basic-example [INFO] hello info
+	// basic-example [WARN] hello warn
+	// basic-example [WARN] hello warn
+	// basic-example [ERROR] hello error
+	// basic-example [ERROR] hello error
+	// basic-example [FATAL] hello fatal
+	// basic-example [FATAL] hello fatal
 }
 
 // Shows how to only display messages from certain log levels
