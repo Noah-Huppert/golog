@@ -22,7 +22,7 @@ const WarnLevelName string = "WARN"
 const WarnLevel int = 80
 
 // InfoLevelName is the name of the INFO log level
-const InfoLevelName string = "LEVEL"
+const InfoLevelName string = "INFO"
 
 // InfoLevel is used to identify the INFO log level and compare it to
 // other levels
