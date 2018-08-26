@@ -95,7 +95,7 @@ func Example_format() {
 }
 
 // Shows how to use the GetChild method
-func Example_GetChild() {
+func Example_child() {
 	// logger will print normal messages to stdout and errors to stderr
 	logger := golog.NewStdLogger("get-child-example")
 
