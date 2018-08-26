@@ -40,6 +40,10 @@
 //
 // Log output format can be configured with Go templates
 //
-//  logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}")
+//  logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}\n")
+//
+// Child loggers can be created
+//
+//  child := logger.GetChild("child")
 //
 package golog

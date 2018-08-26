@@ -16,6 +16,10 @@ type Logger interface {
 	// template.
 	SetFormatTmpl(tmpl string)
 
+	// GetChild creates a new logger who's name is the original logger's
+	// name and the provided name combined
+	GetChild(name string) Logger
+
 	// Fatal writes at the FATAL level and panics the process
 	Fatal(data ...interface{})
 

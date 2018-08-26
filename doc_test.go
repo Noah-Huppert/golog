@@ -62,8 +62,8 @@ func Example_levels() {
 // Shows how to customize the log output format
 func Example_format() {
 	// Configure logger with special format
-	logger := golog.NewStdLogger("basic-example")
-	logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}")
+	logger := golog.NewStdLogger("format-example")
+	logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}\n")
 
 	// Log messages for each log level
 	logger.Debug("hello debug")
@@ -82,14 +82,33 @@ func Example_format() {
 	logger.Fatalf("hello %s", "fatal")
 
 	// Output:
-	// name=basic-example level=DEBUG msg=hello debug
-	// name=basic-example level=DEBUG msg=hello debug
-	// name=basic-example level=INFO msg=hello info
-	// name=basic-example level=INFO msg=hello info
-	// name=basic-example level=WARN msg=hello warn
-	// name=basic-example level=WARN msg=hello warn
-	// name=basic-example level=ERROR msg=hello error
-	// name=basic-example level=ERROR msg=hello error
-	// name=basic-example level=FATAL msg=hello fatal
-	// name=basic-example level=FATAL msg=hello fatal
+	// name=format-example level=DEBUG msg=hello debug
+	// name=format-example level=DEBUG msg=hello debug
+	// name=format-example level=INFO msg=hello info
+	// name=format-example level=INFO msg=hello info
+	// name=format-example level=WARN msg=hello warn
+	// name=format-example level=WARN msg=hello warn
+	// name=format-example level=ERROR msg=hello error
+	// name=format-example level=ERROR msg=hello error
+	// name=format-example level=FATAL msg=hello fatal
+	// name=format-example level=FATAL msg=hello fatal
+}
+
+// Shows how to use the GetChild method
+func Example_GetChild() {
+	// logger will print normal messages to stdout and errors to stderr
+	logger := golog.NewStdLogger("get-child-example")
+
+	// Log messages with the parent logger
+	logger.Debug("hello debug")
+
+	// Create a child logger
+	child := logger.GetChild("child")
+
+	// Log messages with the child logger
+	child.Debug("hello debug")
+
+	// Output:
+	// get-child-example [DEBUG] hello debug
+	// get-child-example.child [DEBUG] hello debug
 }

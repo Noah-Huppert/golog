@@ -1,6 +1,7 @@
 package golog
 
 import (
+	"fmt"
 	"io"
 	"os"
 )
@@ -53,6 +54,14 @@ func NewWriterLogger(name string, fatalWriter io.Writer, errorWriter io.Writer,
 		InfoWriter:  infoWriter,
 		DebugWriter: debugWriter,
 	}
+}
+
+// GetChild implements Logger.GetChild
+func (l WriterLogger) GetChild(child string) Logger {
+	newName := fmt.Sprintf("%s.%s", l.name, child)
+
+	return NewWriterLogger(newName, l.FatalWriter, l.ErrorWriter,
+		l.WarnWriter, l.InfoWriter, l.DebugWriter)
 }
 
 func (l WriterLogger) Fatal(data ...interface{}) {
