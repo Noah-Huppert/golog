@@ -28,9 +28,9 @@ type WriterLogger struct {
 	DebugWriter io.Writer
 }
 
-// NewStdLogger creates a WriterLogger which outputs normal messages to
+// NewLogger creates a WriterLogger which outputs normal messages to
 // stdout and error messages to stderr
-func NewStdLogger(name string) *WriterLogger {
+func NewLogger(name string) *WriterLogger {
 	return &WriterLogger{
 		BaseLogger:  NewBaseLogger(name),
 		FatalWriter: os.Stderr,
@@ -39,6 +39,11 @@ func NewStdLogger(name string) *WriterLogger {
 		InfoWriter:  os.Stdout,
 		DebugWriter: os.Stdout,
 	}
+}
+
+// NewStdLogger calls NewLogger, kept for compatibility
+func NewStdLogger(name string) *WriterLogger {
+	return NewLogger(name)
 }
 
 // NewWriterLogger creates a new WriterLogger

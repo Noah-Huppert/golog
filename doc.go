@@ -6,7 +6,7 @@
 // Go Log is easy to setup:
 //
 //   // logger will print normal messages to stdout and errors to stderr
-//   logger := golog.NewStdLogger("example")
+//   logger := golog.NewLogger("example")
 //
 // The logging API should be familiar to those who have used the standard
 // `fmt` and `log` packages.
