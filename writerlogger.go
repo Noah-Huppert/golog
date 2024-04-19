@@ -65,8 +65,11 @@ func NewWriterLogger(name string, fatalWriter io.Writer, errorWriter io.Writer,
 func (l WriterLogger) GetChild(child string) Logger {
 	newName := fmt.Sprintf("%s.%s", l.name, child)
 
-	return NewWriterLogger(newName, l.FatalWriter, l.ErrorWriter,
+	childLogger := NewWriterLogger(newName, l.FatalWriter, l.ErrorWriter,
 		l.WarnWriter, l.InfoWriter, l.DebugWriter)
+	childLogger.SetLevel(l.level)
+
+	return childLogger
 }
 
 func (l WriterLogger) Fatal(data ...interface{}) {

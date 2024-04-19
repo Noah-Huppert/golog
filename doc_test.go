@@ -98,17 +98,20 @@ func Example_format() {
 func Example_child() {
 	// logger will print normal messages to stdout and errors to stderr
 	logger := golog.NewLogger("get-child-example")
+	logger.SetLevel(golog.InfoLevel)
 
 	// Log messages with the parent logger
 	logger.Debug("hello debug")
+	logger.Info("hello info")
 
 	// Create a child logger
 	child := logger.GetChild("child")
 
 	// Log messages with the child logger
 	child.Debug("hello debug")
+	child.Info("hello info")
 
 	// Output:
-	// get-child-example [DEBUG] hello debug
-	// get-child-example.child [DEBUG] hello debug
+	// get-child-example [INFO] hello info
+	// get-child-example.child [INFO] hello info
 }

@@ -5,45 +5,44 @@
 //
 // Go Log is easy to setup:
 //
-//   // logger will print normal messages to stdout and errors to stderr
-//   logger := golog.NewLogger("example")
+//	// logger will print normal messages to stdout and errors to stderr
+//	logger := golog.NewLogger("example")
 //
 // The logging API should be familiar to those who have used the standard
 // `fmt` and `log` packages.
 //
-//   logger.Debug("hello debug")
-//   logger.Debugf("hello %s", "debug")
+//	logger.Debug("hello debug")
+//	logger.Debugf("hello %s", "debug")
 //
-//   logger.Info("hello info")
-//   logger.Infof("hello %s", "info")
+//	logger.Info("hello info")
+//	logger.Infof("hello %s", "info")
 //
-//   logger.Warn("hello warn")
-//   logger.Warnf("hello %s", "warn")
+//	logger.Warn("hello warn")
+//	logger.Warnf("hello %s", "warn")
 //
-//   logger.Error("hello error")
-//   logger.Errorf("hello %s", "error")
+//	logger.Error("hello error")
+//	logger.Errorf("hello %s", "error")
 //
-//   logger.Fatal("hello fatal")
-//   logger.Fatalf("hello %s", "fatal")
+//	logger.Fatal("hello fatal")
+//	logger.Fatalf("hello %s", "fatal")
 //
 // You can configure Go Log to only show messages of certain importance
 //
-//   logger.SetLevel(golog.DebugLevel)
+//	logger.SetLevel(golog.DebugLevel)
 //
-//   logger.SetLevel(golog.InfoLevel)
+//	logger.SetLevel(golog.InfoLevel)
 //
-//   logger.SetLevel(golog.WarnLevel)
+//	logger.SetLevel(golog.WarnLevel)
 //
-//   logger.SetLevel(golog.ErrorLevel)
+//	logger.SetLevel(golog.ErrorLevel)
 //
-//   logger.SetLevel(golog.FatalLevel)
+//	logger.SetLevel(golog.FatalLevel)
 //
 // Log output format can be configured with Go templates
 //
-//  logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}\n")
+//	logger.SetFormatTmpl("name={{ .Name }} level={{ .Level }} msg={{ .Msg }}\n")
 //
 // Child loggers can be created
 //
-//  child := logger.GetChild("child")
-//
+//	child := logger.GetChild("child")
 package golog
